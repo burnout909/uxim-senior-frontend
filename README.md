@@ -1,5 +1,5 @@
 # uxim-senior-club
-UXIM X Namdong Senior Club Website
+A repository for a volunteer project by Yonsei University's HCI/UX club, **UXIM**: building a website for the Namdong Senior Club.
 
 ## Tech Stack
 <img src="https://github.com/user-attachments/assets/ce76c7b9-c637-42c8-8c83-320d8f884cba" alt="techstack" width="600"/>
