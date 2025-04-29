@@ -6,7 +6,12 @@ function App() {
     <>
       <div className="flex flex-col w-full h-full">
         <Breadcrumb
-          items={[{ label: <span className="text-[20px]">홈</span> }]}
+          items={[
+            {
+              label: <span className="text-[20px]">홈</span>,
+              onClick: () => {},
+            },
+          ]}
         ></Breadcrumb>
         <Pagination
           currentPage={9}
