@@ -1,42 +1,26 @@
-import { Accordion, Breadcrumb, Pagination } from "@krds-ui/core";
-import "./App.css";
+import { Breadcrumb } from "@krds-ui/core";
+import { Route, Routes, useNavigate } from "react-router";
+import Home from "./pages/Home.tsx";
 
 function App() {
+  let navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col w-full h-full">
         <Breadcrumb
           items={[
             {
-              label: <span className="text-[20px]">홈</span>,
-              onClick: () => {},
+              label: "홈",
+              onClick: () => {
+                navigate("/home");
+              },
             },
           ]}
         ></Breadcrumb>
-        <Pagination
-          currentPage={9}
-          onPageChange={function ra() {}}
-          totalPages={20}
-          visiblePages={5}
-        />
-        <Accordion
-          items={[
-            {
-              children: (
-                <p className="text-[100px]">Accordion Item 1 Content</p>
-              ),
-              title: "Accordion Item 1",
-            },
-            {
-              children: "Accordion Item 2 Content",
-              title: "Accordion Item 2",
-            },
-            {
-              children: "Accordion Item 3 Content",
-              title: "Accordion Item 3",
-            },
-          ]}
-        />
+
+        <Routes>
+          <Route path="/home" element={<Home />} />
+        </Routes>
       </div>
     </>
   );
