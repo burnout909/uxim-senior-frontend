@@ -2,7 +2,7 @@
 import krdsPlugin from "@krds-ui/tailwindcss-plugin";
 
 export default {
-  content: ["./lib/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {},
   plugins: [krdsPlugin],
 };
