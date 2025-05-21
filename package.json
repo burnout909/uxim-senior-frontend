@@ -13,8 +13,10 @@
     "@krds-ui/core": "^0.6.0",
     "@krds-ui/tailwindcss-plugin": "^0.6.0",
     "@tailwindcss/vite": "^4.1.4",
+    "clsx": "^2.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^6.30.0",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
