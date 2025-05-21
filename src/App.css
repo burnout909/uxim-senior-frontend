@@ -23,3 +23,12 @@
 .content-container {
     margin: 100px 0;
 }
+
+.breadcrumb nav {
+    background-color: rgba(239, 242, 246, 1);
+    justify-content: flex-end;
+    display: flex;
+    padding: 30px 10%;
+}
+.breadcrumb nav ol{
+}

@@ -8,7 +8,7 @@ import { FiHome } from "react-icons/fi";
 
 function App() {
   let navigate = useNavigate();
-
+  
 
   return (
     <>
@@ -18,9 +18,9 @@ function App() {
         ></Breadcrumb>
 
         <>
-          <div className="flex flex-col w-full h-full bg-gray-200" >
+          <div className="flex flex-col w-full h-full breadcrumb" >
             <div>
-              <Breadcrumb 
+              <Breadcrumb
                 items={[
                   {
                     label: <span className="text-lg"><FiHome /></span>,
