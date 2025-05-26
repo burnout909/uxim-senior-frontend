@@ -1,28 +1,60 @@
-import { Breadcrumb } from "@krds-ui/core";
-import { Route, Routes, useNavigate } from "react-router";
-import Home from "./pages/Home.tsx";
+import { Navigate, Route, Routes } from "react-router-dom";
+import {
+  HomeLayout,
+  ContentLayout,
+  AboutLayout,
+  ProjectsLayout,
+  NoticeLayout,
+} from "./layouts";
+import {
+  homeLayoutRoutes,
+  aboutLayoutRoutes,
+  resourcesLayoutRoutes,
+  projectsLayoutRoutes,
+  noticeLayoutRoutes,
+} from "./routes/routeMap";
+import ResourcesLayout from "./layouts/ResourcesLayout";
+import { ROUTE } from "./routes/route";
 
 function App() {
-  let navigate = useNavigate();
   return (
-    <>
-      <div className="flex flex-col w-full h-full">
-        <Breadcrumb
-          items={[
-            {
-              label: "홈",
-              onClick: () => {
-                navigate("/home");
-              },
-            },
-          ]}
-        ></Breadcrumb>
+    <Routes>
+      {/* 초기 접속 시 /home으로 리다이렉트*/}
+      <Route path="/" element={<Navigate to={ROUTE.home} replace />} />
+      {/* 홈 전용 레이아웃 */}
+      <Route element={<HomeLayout />}>
+        {homeLayoutRoutes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+      </Route>
 
-        <Routes>
-          <Route path="/home" element={<Home />} />
-        </Routes>
-      </div>
-    </>
+      {/* 나머지 콘텐츠용 레이아웃 */}
+      <Route element={<ContentLayout />}>
+        <Route element={<AboutLayout />}>
+          {aboutLayoutRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+
+        <Route element={<ProjectsLayout />}>
+          {projectsLayoutRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+
+        <Route element={<NoticeLayout />}>
+          {noticeLayoutRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+
+        <Route element={<ResourcesLayout />}>
+          {resourcesLayoutRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 
