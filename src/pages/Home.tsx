@@ -1,15 +1,23 @@
 import NoticeItem from "../components/home/NoticeItem";
 import ParticipationStepCard from "../components/home/ParticipationStepCard";
 import QuickLinkCard from "../components/home/QuickLinkCard";
+import HeroImage from "../assets/icons/main_slide02.jpg"
+import { ROUTE } from "../routes/route";
 
-const QUICK_LINK_LABELS = [
-  "기관소개",
-  "일자리 사업소개",
-  "나에게 맞는 일자리",
-  "생산품",
+const QUICK_LINKS = [
+  { label: "기관소개", to: ROUTE.about.greeting },
+  { label: "일자리 사업소개", to: ROUTE.projects.publicService },
+  { label: "나에게 맞는 일자리", to: ROUTE.projects.employment },
+  { label: "생산품", to: ROUTE.notice.products },
+];;
+
+const PARTICIPATION_STEPS = [
+  { step: "상담", description: "전화(032-xxx-xxxx) 또는 방문상담" },
+  { step: "접수", description: "직접 방문하여 서류 제출" },
+  { step: "연계", description: "참여 가능 여부 확인 후 연계" },
+  { step: "면접", description: "추가 면접 및 교육 진행" },
+  { step: "활동", description: "교육 수료 후 활동 시작" },
 ];
-
-const PARTICIPATION_STEPS = ["상담", "접수", "연계", "연결", "면접", "활동"];
 
 // src/pages/Home.tsx
 export default function Home() {
@@ -17,14 +25,19 @@ export default function Home() {
     <div className="w-full">
       {/* Hero 영역 */}
       <section className="w-full h-[300px] bg-gray-100 flex items-center justify-center">
-        <div className="w-[200px] h-[200px] bg-gray-300 rounded" />
+        <img
+            src={HeroImage}
+            alt="메인이미지"
+            className="w-[1000px] object-cover rounded-xl m-4"
+          />
+        {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
 
       {/* 주요 바로가기 */}
       <section className="bg-blue-500 text-white py-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {QUICK_LINK_LABELS.map((label) => (
-            <QuickLinkCard key={label} label={label} />
+          {QUICK_LINKS.map(({label, to}) => (
+            <QuickLinkCard key={label} label={label} to={to} />
           ))}
         </div>
       </section>
@@ -76,16 +89,14 @@ export default function Home() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-10">일자리참여방법</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-4 text-sm">
-            {PARTICIPATION_STEPS.map((step, idx) => (
-              <>
-                <ParticipationStepCard
-                  key={step + idx}
-                  step={step}
-                  description={"전화 또는 방문상담"}
-                />
-                <div />
-              </>
+          <div className="flex justify-center items-center gap-4 flex-wrap">
+            {PARTICIPATION_STEPS.map((item, i) => (
+              <div key={item.step} className="flex items-center gap-2">
+                <ParticipationStepCard {...item} />
+                {i < PARTICIPATION_STEPS.length - 1 && (
+                  <div className="text-2xl text-gray-400">{'>'}</div>
+                )}
+              </div>
             ))}
           </div>
           {/* 영상 링크 */}
