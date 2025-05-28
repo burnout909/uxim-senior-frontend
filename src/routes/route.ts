@@ -32,7 +32,7 @@ export const ROUTE = {
     links: "/resources/links",
   },
 
-  editor: "/editor",
+  admin: "/admin",
 
   
 };

@@ -11,6 +11,7 @@ const QUICK_LINKS = [
   { label: "생산품", to: ROUTE.notice.products },
 ];;
 
+{/* 퀵메뉴 리스트 재정립 */}
 const PARTICIPATION_STEPS = [
   { step: "상담", description: "전화(032-xxx-xxxx) 또는 방문상담" },
   { step: "접수", description: "직접 방문하여 서류 제출" },
