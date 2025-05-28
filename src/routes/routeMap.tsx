@@ -1,5 +1,7 @@
 import { ROUTE } from "./route";
 import Home from "../pages/Home";
+import EditorPage from "../pages/Admin";
+
 import {
   Greeting,
   Introduction,
@@ -22,7 +24,10 @@ import { Announcement, JobInfo, Products, Free, Staff } from "../pages/notice";
 import { Photos, Videos, Links } from "../pages/resources";
 
 // HomeLayout: Home 전용
-export const homeLayoutRoutes = [{ path: ROUTE.home, element: <Home /> }];
+export const homeLayoutRoutes = [
+  { path: ROUTE.home, element: <Home /> },
+  { path: ROUTE.admin, element: <EditorPage /> },
+];
 
 export const aboutLayoutRoutes = [
   { path: ROUTE.about.greeting, element: <Greeting /> },

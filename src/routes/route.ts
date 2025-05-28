@@ -31,4 +31,8 @@ export const ROUTE = {
     videos: "/resources/videos",
     links: "/resources/links",
   },
+
+  admin: "/admin",
+
+  
 };
