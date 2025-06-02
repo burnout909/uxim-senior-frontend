@@ -19,23 +19,36 @@ export default function Introduction () {
 
       {/* 노인일자리 유형 아이콘 영역 */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
-        <div className="bg-yellow-400 text-white p-6 rounded shadow text-center">
+        <div className="bg-[#f6a623] text-white p-6 rounded-xl shadow text-center">
           <h3 className="text-lg font-bold mb-2">노인공익활동사업</h3>
-          <p className="text-sm">지역사회 공익증진을 위한 노인 자원봉사활동 제공</p>
+          <p className="text-sm leading-relaxed">
+            어르신이 참여하는 급식 지원, 시설관리, 스쿨존 지킴이 등
+            지역사회 공익을 위한 자원봉사 활동
+          </p>
         </div>
-        <div className="bg-blue-700 text-white p-6 rounded shadow text-center">
+        <div className="bg-[#0072bc] text-white p-6 rounded-xl shadow text-center">
           <h3 className="text-lg font-bold mb-2">공동체사업단</h3>
-          <p className="text-sm">소규모 공동작업형 일자리로, 참여 노인이 공동으로 사업운영</p>
+          <p className="text-sm leading-relaxed">
+            도시락, 카페, 택배, 급식 지원 등
+            소규모로 협업하여 운영하는 공동 작업형 일자리
+          </p>
         </div>
-        <div className="bg-green-600 text-white p-6 rounded shadow text-center">
+        <div className="bg-[#7ab800] text-white p-6 rounded-xl shadow text-center">
           <h3 className="text-lg font-bold mb-2">노인역량활용사업</h3>
-          <p className="text-sm">전문 직종의 경험을 살려 사회서비스 분야에 참여</p>
+          <p className="text-sm leading-relaxed">
+            전문 직종 경력을 살려 행정지원, 상담, 교육 등
+            사회서비스 분야에 참여하는 일자리
+          </p>
         </div>
-        <div className="bg-red-600 text-white p-6 rounded shadow text-center">
+        <div className="bg-[#d0021b] text-white p-6 rounded-xl shadow text-center">
           <h3 className="text-lg font-bold mb-2">취업지원</h3>
-          <p className="text-sm">구직희망 노인을 위한 일자리 연계, 취업 알선</p>
+          <p className="text-sm leading-relaxed">
+            구직을 희망하는 어르신에게
+            맞춤형 일자리 정보 제공 및 취업 연계 지원
+          </p>
         </div>
       </div>
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Title from "../../components/Title";
-import LocationMap1 from "../../assets/icons/org.png";
+import LocationMap1 from "../../assets/icons/location.png";
 
 export default function Location() {
   return (
