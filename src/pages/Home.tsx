@@ -1,7 +1,7 @@
 import NoticeItem from "../components/home/NoticeItem";
 import ParticipationStepCard from "../components/home/ParticipationStepCard";
 import QuickLinkCard from "../components/home/QuickLinkCard";
-import HeroImage from "../assets/icons/main_slide02.jpg"
+import HeroImage from "../assets/images/main_slide02.jpg";
 import { ROUTE } from "../routes/route";
 
 const QUICK_LINKS = [
@@ -9,9 +9,11 @@ const QUICK_LINKS = [
   { label: "일자리 사업소개", to: ROUTE.projects.publicService },
   { label: "나에게 맞는 일자리", to: ROUTE.projects.employment },
   { label: "생산품", to: ROUTE.notice.products },
-];;
+];
 
-{/* 퀵메뉴 리스트 재정립 */}
+{
+  /* 퀵메뉴 리스트 재정립 */
+}
 const PARTICIPATION_STEPS = [
   { step: "상담", description: "전화(032-xxx-xxxx) 또는 방문상담" },
   { step: "접수", description: "직접 방문하여 서류 제출" },
@@ -27,17 +29,17 @@ export default function Home() {
       {/* Hero 영역 */}
       <section className="w-full h-[300px] bg-gray-100 flex items-center justify-center">
         <img
-            src={HeroImage}
-            alt="메인이미지"
-            className="w-[800px] object-cover rounded-xl m-4"
-          />
+          src={HeroImage}
+          alt="메인이미지"
+          className="w-[800px] object-cover rounded-xl m-4"
+        />
         {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
 
       {/* 주요 바로가기 */}
       <section className="bg-blue-500 text-white py-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {QUICK_LINKS.map(({label, to}) => (
+          {QUICK_LINKS.map(({ label, to }) => (
             <QuickLinkCard key={label} label={label} to={to} />
           ))}
         </div>
@@ -95,7 +97,7 @@ export default function Home() {
               <div key={item.step} className="flex items-center gap-2">
                 <ParticipationStepCard {...item} />
                 {i < PARTICIPATION_STEPS.length - 1 && (
-                  <div className="text-2xl text-gray-400">{'>'}</div>
+                  <div className="text-2xl text-gray-400">{">"}</div>
                 )}
               </div>
             ))}
