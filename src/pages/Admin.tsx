@@ -1,7 +1,8 @@
 // src/pages/admin/EditorPage.tsx
 import { useState } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // 스타일 적용
+import "react-quill/dist/quill.snow.css";
+import "./quill-custom.css";
 
 export default function EditorPage() {
   const [value, setValue] = useState("");

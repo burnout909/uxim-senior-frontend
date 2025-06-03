@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 import krdsPlugin from "@krds-ui/tailwindcss-plugin";
-import typography from "@tailwindcss/typography"; // ✅ 추가
+import typography from "@tailwindcss/typography";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {},
-  plugins: [krdsPlugin, typography], // 추가
-  
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Noto Sans"', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [krdsPlugin, typography],
 };

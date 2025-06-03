@@ -29,7 +29,7 @@ export default function Home() {
         <img
             src={HeroImage}
             alt="메인이미지"
-            className="w-[1000px] object-cover rounded-xl m-4"
+            className="w-[800px] object-cover rounded-xl m-4"
           />
         {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
@@ -89,8 +89,8 @@ export default function Home() {
       {/* 일자리 참여방법 */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">일자리참여방법</h2>
-          <div className="flex justify-center items-center gap-4 flex-wrap">
+          <h2 className="text-3xl font-bold mb-[10px]">일자리참여방법</h2>
+          <div className="flex justify-center items-center gap-8 flex-wrap">
             {PARTICIPATION_STEPS.map((item, i) => (
               <div key={item.step} className="flex items-center gap-2">
                 <ParticipationStepCard {...item} />
@@ -99,13 +99,6 @@ export default function Home() {
                 )}
               </div>
             ))}
-          </div>
-          {/* 영상 링크 */}
-          <div className="mt-12">
-            <button className="flex items-center text-blue-700 gap-2">
-              <div className="w-10 h-10 bg-gray-300 rounded-full" />
-              남동시니어클럽 영상사업단
-            </button>
           </div>
         </div>
       </section>
