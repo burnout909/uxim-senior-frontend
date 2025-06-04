@@ -25,11 +25,11 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero 영역 */}
-      <section className="w-full h-[300px] bg-gray-100 flex items-center justify-center">
+      <section className="w-full h-[400px] bg-gray-100 flex items-center justify-center overflow-hidden">
         <img
             src={HeroImage}
             alt="메인이미지"
-            className="w-[530px] h-[1000px] object-cover"
+            className="w-full h-full object-cover object-top"
           />
         {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
