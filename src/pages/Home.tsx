@@ -1,7 +1,7 @@
 import NoticeItem from "../components/home/NoticeItem";
 import ParticipationStepCard from "../components/home/ParticipationStepCard";
 import QuickLinkCard from "../components/home/QuickLinkCard";
-import HeroImage from "../assets/icons/main_slide02.jpg"
+import HeroImage from "../assets/icons/main2.png"
 import { ROUTE } from "../routes/route";
 
 const QUICK_LINKS = [
@@ -29,7 +29,7 @@ export default function Home() {
         <img
             src={HeroImage}
             alt="메인이미지"
-            className="w-[800px] object-cover rounded-xl m-4"
+            className="w-[530px] h-[1000px] object-cover"
           />
         {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
