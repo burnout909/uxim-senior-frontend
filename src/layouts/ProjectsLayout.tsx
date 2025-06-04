@@ -11,7 +11,7 @@ const projectItems = [
 
 export default function ProjectsLayout() {
   return (
-    <div className="flex w-full">
+    <div className="flex w-full min-h-screen">
       <aside className="w-[181px] shrink-0 mr-[130px]">
         <LeftNav title="사업소개" items={projectItems} />
       </aside>

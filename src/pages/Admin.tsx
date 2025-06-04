@@ -8,13 +8,13 @@ export default function EditorPage() {
   const [value, setValue] = useState("");
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">마크다운 에디터</h2>
+    <div className="px-24 py-12 min-h-screen">
+      <p className="text-2xl font-bold mb-4">공지사항 및 일자리 소식 작성</p>
       <ReactQuill
         theme="snow"
         value={value}
         onChange={setValue}
-        className="bg-white"
+        className="bg-white h-[280px]"
       />
     </div>
   );

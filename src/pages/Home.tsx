@@ -91,7 +91,7 @@ export default function Home() {
       {/* 일자리 참여방법 */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-[10px]">일자리참여방법</h2>
+          <p className="text-2xl font-bold pb-[20px]">일자리참여방법</p>
           <div className="flex justify-center items-center gap-8 flex-wrap">
             {PARTICIPATION_STEPS.map((item, i) => (
               <div key={item.step} className="flex items-center gap-2">
