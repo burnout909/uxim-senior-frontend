@@ -1,5 +1,5 @@
 import Title from "../../components/Title";
-import OrgMap from "../../assets/icons/org.png";
+import OrgMap from "../../assets/images/org.png";
 
 export default function Org() {
   return (
@@ -8,7 +8,11 @@ export default function Org() {
 
       {/* 조직도 이미지 */}
       <div className="flex flex-col md:flex-row justify-center gap-8">
-        <img src={OrgMap} alt="남동시니어클럽 조직도" className="w-full rounded shadow" />
+        <img
+          src={OrgMap}
+          alt="남동시니어클럽 조직도"
+          className="w-full rounded shadow"
+        />
       </div>
 
       {/* 인원 구성도 표 */}

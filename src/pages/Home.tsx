@@ -9,9 +9,11 @@ const QUICK_LINKS = [
   { label: "일자리 사업소개", to: ROUTE.projects.publicService },
   { label: "나에게 맞는 일자리", to: ROUTE.projects.employment },
   { label: "생산품", to: ROUTE.notice.products },
-];;
+];
 
-{/* 퀵메뉴 리스트 재정립 */}
+{
+  /* 퀵메뉴 리스트 재정립 */
+}
 const PARTICIPATION_STEPS = [
   { step: "상담", description: "전화(032-xxx-xxxx) 또는 방문상담" },
   { step: "접수", description: "직접 방문하여 서류 제출" },
@@ -27,7 +29,7 @@ export default function Home() {
       {/* Hero 영역 */}
       <section className="w-full h-[400px] bg-gray-100 flex items-center justify-center overflow-hidden">
         <img
-            src={HeroImage}
+          src={HeroImage}
             alt="메인이미지"
             className="w-full h-full object-cover object-top"
           />
@@ -37,7 +39,7 @@ export default function Home() {
       {/* 주요 바로가기 */}
       <section className="bg-blue-500 text-white py-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {QUICK_LINKS.map(({label, to}) => (
+          {QUICK_LINKS.map(({ label, to }) => (
             <QuickLinkCard key={label} label={label} to={to} />
           ))}
         </div>
@@ -89,13 +91,13 @@ export default function Home() {
       {/* 일자리 참여방법 */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-[10px]">일자리참여방법</h2>
+          <p className="text-2xl font-bold pb-[20px]">일자리참여방법</p>
           <div className="flex justify-center items-center gap-8 flex-wrap">
             {PARTICIPATION_STEPS.map((item, i) => (
               <div key={item.step} className="flex items-center gap-2">
                 <ParticipationStepCard {...item} />
                 {i < PARTICIPATION_STEPS.length - 1 && (
-                  <div className="text-2xl text-gray-400">{'>'}</div>
+                  <div className="text-2xl text-gray-400">{">"}</div>
                 )}
               </div>
             ))}
