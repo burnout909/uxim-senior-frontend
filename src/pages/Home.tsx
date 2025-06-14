@@ -1,7 +1,7 @@
 import NoticeItem from "../components/home/NoticeItem";
 import ParticipationStepCard from "../components/home/ParticipationStepCard";
 import QuickLinkCard from "../components/home/QuickLinkCard";
-import HeroImage from "../assets/images/main_slide02.jpg";
+import HeroImage from "../assets/icons/main2.png"
 import { ROUTE } from "../routes/route";
 
 const QUICK_LINKS = [
@@ -27,12 +27,12 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero 영역 */}
-      <section className="w-full h-[300px] bg-gray-100 flex items-center justify-center">
+      <section className="w-full h-[400px] bg-gray-100 flex items-center justify-center overflow-hidden">
         <img
           src={HeroImage}
-          alt="메인이미지"
-          className="w-[800px] object-cover rounded-xl m-4"
-        />
+            alt="메인이미지"
+            className="w-full h-full object-cover object-top"
+          />
         {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
       </section>
 
