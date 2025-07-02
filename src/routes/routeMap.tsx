@@ -1,6 +1,7 @@
 import { ROUTE } from "./route";
 import Home from "../pages/Home";
-import EditorPage from "../pages/Admin";
+import Admin from "../pages/admin/Admin"; // ✅ 올바른 이름
+import LoginPage from "../pages/admin/LoginPage"; // ✅ 관리자 로그인 페이지
 
 import {
   Greeting,
@@ -23,10 +24,11 @@ import { Announcement, JobInfo, Products, Free, Staff } from "../pages/notice";
 
 import { Photos, Videos, Links } from "../pages/resources";
 
-// HomeLayout: Home 전용
+// ✅ HomeLayout: 홈 + 관리자 관련
 export const homeLayoutRoutes = [
   { path: ROUTE.home, element: <Home /> },
-  { path: ROUTE.admin, element: <EditorPage /> },
+  { path: ROUTE.admin, element: <Admin /> }, // 관리자 글 작성 페이지
+  { path: ROUTE.adminLogin, element: <LoginPage /> }, // 관리자 로그인 페이지
 ];
 
 export const aboutLayoutRoutes = [

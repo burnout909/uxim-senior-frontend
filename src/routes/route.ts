@@ -33,6 +33,5 @@ export const ROUTE = {
   },
 
   admin: "/admin",
-
-  
+  adminLogin: "/admin/login",
 };
