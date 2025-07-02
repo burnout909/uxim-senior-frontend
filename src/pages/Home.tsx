@@ -1,7 +1,10 @@
+// src/pages/Home.tsx
+
+import { useNavigate } from "react-router-dom";
 import NoticeItem from "../components/home/NoticeItem";
 import ParticipationStepCard from "../components/home/ParticipationStepCard";
 import QuickLinkCard from "../components/home/QuickLinkCard";
-import HeroImage from "../assets/icons/main2.png"
+import HeroImage from "../assets/icons/main2.png";
 import { ROUTE } from "../routes/route";
 
 const QUICK_LINKS = [
@@ -11,9 +14,6 @@ const QUICK_LINKS = [
   { label: "생산품", to: ROUTE.notice.products },
 ];
 
-{
-  /* 퀵메뉴 리스트 재정립 */
-}
 const PARTICIPATION_STEPS = [
   { step: "상담", description: "전화(032-xxx-xxxx) 또는 방문상담" },
   { step: "접수", description: "직접 방문하여 서류 제출" },
@@ -22,18 +22,18 @@ const PARTICIPATION_STEPS = [
   { step: "활동", description: "교육 수료 후 활동 시작" },
 ];
 
-// src/pages/Home.tsx
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full">
       {/* Hero 영역 */}
       <section className="w-full h-[400px] bg-gray-100 flex items-center justify-center overflow-hidden">
         <img
           src={HeroImage}
-            alt="메인이미지"
-            className="w-full h-full object-cover object-top"
-          />
-        {/* <div className="w-[200px] h-[200px] bg-gray-300 rounded" /> */}
+          alt="메인이미지"
+          className="w-full h-full object-cover object-top"
+        />
       </section>
 
       {/* 주요 바로가기 */}
@@ -54,13 +54,18 @@ export default function Home() {
               공지사항{" "}
               <span className="text-gray-500 text-lg ml-2">Notice</span>
             </h2>
-            <button className="text-xl">＋</button>
+            <button
+              onClick={() => navigate(ROUTE.notice.announcement)}
+              className="text-xl hover:text-blue-500"
+            >
+              ＋
+            </button>
           </div>
           <ul className="space-y-2 text-sm text-gray-700">
             {Array.from({ length: 5 }).map((_, i) => (
               <NoticeItem
                 key={i}
-                title={"2024년도 서울남동시니어클럽 제{i + 1}차 운영위원회..."}
+                title={`2024년도 서울남동시니어클럽 제${i + 1}차 운영위원회...`}
                 date={"2025.XX.XX"}
               />
             ))}
@@ -74,13 +79,13 @@ export default function Home() {
               일자리 소식{" "}
               <span className="text-gray-500 text-lg ml-2">Job Info</span>
             </h2>
-            <button className="text-xl">＋</button>
+            <button className="text-xl hover:text-blue-500">＋</button>
           </div>
           <ul className="space-y-2 text-sm text-gray-700">
             {Array.from({ length: 5 }).map((_, i) => (
               <NoticeItem
                 key={i}
-                title={"2024년도 서울남동시니어클럽 제{i + 1}차 운영위원회..."}
+                title={`2024년도 서울남동시니어클럽 제${i + 1}차 운영위원회...`}
                 date={"2025.XX.XX"}
               />
             ))}
