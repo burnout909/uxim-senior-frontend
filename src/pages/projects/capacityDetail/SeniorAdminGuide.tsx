@@ -1,69 +1,45 @@
-import Title from "../../../components/Title";
+import CapacityDetailLayout from "../../../layouts/CapacityDetailLayout";
 import Image from "../../../assets/images/capacity/helper.png";
-import { useNavigate, useLocation } from "react-router-dom";
-import ProjectTab from "../../../components/ProjectTab";
-import { ROUTE } from "../../../routes/route";
 
 const tabList = [
   {
     name: "시니어공공행정복지도우미",
-    path: ROUTE.projects.capacityDetail.seniorAdmin,
+    path: "/projects/capacity-detail/senior-guide",
   },
   {
     name: "시니어소비피해예방모니터요원",
-    path: ROUTE.projects.capacityDetail.consumerMonitor,
+    path: "/projects/capacity-detail/consumer-monitor",
   },
-  {
-    name: "책사랑딜리버리",
-    path: ROUTE.projects.capacityDetail.bookDelivery,
-  },
+  { name: "책사랑딜리버리리", path: "/projects/capacity-detail/book-delivery" },
   {
     name: "찾아가는경로당행정도우미",
-    path: ROUTE.projects.capacityDetail.mobileAdmin,
+    path: "/projects/capacity-detail/mobile-senior-admin",
   },
   {
     name: "시니어금융업무지원사업",
-    path: ROUTE.projects.capacityDetail.financeSupport,
+    path: "/projects/capacity-detail/financial-support",
   },
   {
     name: "시니어푸드뱅크매니저",
-    path: ROUTE.projects.capacityDetail.foodbankManager,
+    path: "/projects/capacity-detail/food-bank-manager",
   },
   {
     name: "시니어교통안전데이터조사단",
-    path: ROUTE.projects.capacityDetail.trafficSurveyor,
+    path: "/projects/capacity-detail/traffic-surveyor",
   },
 ];
 
 export default function SeniorAdmin() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleTabClick = (tabName: string) => {
-    const target = tabList.find((tab) => tab.name === tabName);
-    if (target) navigate(target.path);
-  };
-
-  const activeTab =
-    tabList.find((tab) => tab.path === location.pathname)?.name || "";
-
   return (
-    <div className="max-w-screen-md mx-auto px-4">
-      <Title text="시니어공공행정복지도우미" />
-      <div className="mt-10">
-        <ProjectTab
-          tabs={tabList.map((t) => t.name)}
-          activeTab={activeTab}
-          onTabClick={handleTabClick}
-        />
-      </div>
-      <div className="mt-10">
+    <CapacityDetailLayout title="노인역량활동사업" tabList={tabList}>
+
+      <div className="mt-10 flex justify-center">
         <img
           src={Image}
           alt="시니어공공행정복지도우미"
           className="w-[700px] rounded-lg shadow"
         />
       </div>
-    </div>
+    </CapacityDetailLayout>
   );
 }

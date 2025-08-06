@@ -4,14 +4,14 @@ import Title from "../../components/Title";
 import ProjectTab from "../../components/ProjectTab";
 
 const tabList = [
-  { name: "시니어행정도우미", path: "/projects/capacity-detail/senior-admin" },
+  { name: "시니어행정도우미", path: "/projects/capacity-detail/senior-guide" },
   { name: "소비자감시단", path: "/projects/capacity-detail/consumer-monitor" },
   { name: "북딜리버리", path: "/projects/capacity-detail/book-delivery" },
-  { name: "모바일행정도우미", path: "/projects/capacity-detail/mobile-admin" },
-  { name: "금융생활지원단", path: "/projects/capacity-detail/finance-support" },
+  { name: "모바일행정도우미", path: "/projects/capacity-detail/mobile-senior-admin" },
+  { name: "금융생활지원단", path: "/projects/capacity-detail/financial-support" },
   {
     name: "푸드뱅크관리사",
-    path: "/projects/capacity-detail/foodbank-manager",
+    path: "/projects/capacity-detail/food-bank-manager",
   },
   {
     name: "교통안전조사원",

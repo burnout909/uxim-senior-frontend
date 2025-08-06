@@ -1,7 +1,6 @@
-import Title from "../../../components/Title";
+import CapacityDetailLayout from "../../../layouts/CapacityDetailLayout";
 import Image from "../../../assets/images/capacity/food.png";
-import { useNavigate, useLocation } from "react-router-dom";
-import ProjectTab from "../../../components/ProjectTab";
+
 
 const tabList = [
   {
@@ -32,34 +31,15 @@ const tabList = [
 ];
 
 export default function FoodbankManager() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleTabClick = (tabName: string) => {
-    const target = tabList.find((tab) => tab.name === tabName);
-    if (target) navigate(target.path);
-  };
-
-  const activeTab =
-    tabList.find((tab) => tab.path === location.pathname)?.name || "";
-
   return (
-    <div className="max-w-screen-md mx-auto px-4">
-      <Title text="시니어푸드뱅크매니저" />
-      <div className="mt-10">
-        <ProjectTab
-          tabs={tabList.map((t) => t.name)}
-          activeTab={activeTab}
-          onTabClick={handleTabClick}
-        />
-      </div>
-      <div className="mt-10">
+<CapacityDetailLayout title="노인역량활동사업" tabList={tabList}>
+      <div className="mt-10 flex justify-center">
         <img
           src={Image}
           alt="시니어푸드뱅크매니저"
           className="w-[700px] rounded-lg shadow"
         />
       </div>
-    </div>
+    </CapacityDetailLayout>
   );
 }
