@@ -1,5 +1,5 @@
 import Title from "../../../components/Title";
-import Image from "../../../assets/images/community/학교급식도우비-001.png"; // ✅ 이미지 경로 맞춰서 수정
+import Image from "../../../assets/images/community/schoolFood.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import ProjectTab from "../../../components/ProjectTab";
 import { ROUTE } from "../../../routes/route";

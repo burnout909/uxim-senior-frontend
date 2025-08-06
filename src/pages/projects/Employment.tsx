@@ -1,6 +1,6 @@
 // src/pages/projects/employment/JobInfo.tsx
 import Title from "../../components/Title";
-import Image from "../../assets/images/employment/취업알선형_무료직업소개_5-001.png";
+import Image from "../../assets/images/employment/connectJob.png";
 
 export default function JobInfo() {
   return (
