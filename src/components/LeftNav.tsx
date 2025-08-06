@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 export interface MenuItem {
   label: string;
   path: string;
+  matchPaths?: string[]; // ✅ 추가
 }
 
 interface LeftNavProps {
@@ -11,6 +12,8 @@ interface LeftNavProps {
 }
 
 export default function LeftNav({ title, items }: LeftNavProps) {
+  const location = useLocation();
+
   return (
     <div className="w-full bg-white border border-gray-200 rounded-md overflow-hidden">
       {/* Title Header */}
@@ -20,19 +23,23 @@ export default function LeftNav({ title, items }: LeftNavProps) {
 
       {/* Menu Items */}
       <nav className="flex flex-col divide-y divide-gray-200">
-        {items.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `flex items-center px-[28px] py-[13px] text-[16px] text-[#246BEB] ${
+        {items.map((item) => {
+          const isActive =
+            location.pathname === item.path ||
+            item.matchPaths?.some((p) => location.pathname.startsWith(p));
+
+          return (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={`flex items-center px-[28px] py-[13px] text-[16px] text-[#246BEB] ${
                 isActive ? "font-bold" : "hover:bg-gray-100"
-              }`
-            }
-          >
-            <span>{item.label}</span>
-          </NavLink>
-        ))}
+              }`}
+            >
+              <span>{item.label}</span>
+            </NavLink>
+          );
+        })}
       </nav>
     </div>
   );
