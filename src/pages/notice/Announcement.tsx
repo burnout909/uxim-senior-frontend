@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../../components/Title";
-import { fetchNotices } from "../../apis/notice";
+import { fetchNotices } from "../../apis/fetchNotice";
 import { Post } from "../../types/post";
 
 export default function Announcement() {
