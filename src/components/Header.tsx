@@ -27,7 +27,7 @@ export default function Header() {
           <img src={logo} width={224} height={48} alt="logo" />
         </button>
       </div>
-      <nav className="flex h-[64px] mx-[80px] border-t border-b border-[#D8D8D8]">
+      <nav className="h-[64px] w-full border-t border-b border-[#D8D8D8] flex px-[50px]">
         {HEADERCOMPONENT.map((label) => (
           <div
             key={label}
