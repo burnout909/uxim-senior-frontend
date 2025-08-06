@@ -1,7 +1,6 @@
-import Title from "../../../components/Title";
+import CapacityDetailLayout from "../../../layouts/CapacityDetailLayout";
 import Image from "../../../assets/images/capacity/office.png";
-import { useNavigate, useLocation } from "react-router-dom";
-import ProjectTab from "../../../components/ProjectTab";
+
 
 const tabList = [
   {
@@ -32,34 +31,15 @@ const tabList = [
 ];
 
 export default function MobileAdminGuide() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleTabClick = (tabName: string) => {
-    const target = tabList.find((tab) => tab.name === tabName);
-    if (target) navigate(target.path);
-  };
-
-  const activeTab =
-    tabList.find((tab) => tab.path === location.pathname)?.name || "";
-
   return (
-    <div className="max-w-screen-md mx-auto px-4">
-      <Title text="찾아가는경로당행정도우미" />
-      <div className="mt-10">
-        <ProjectTab
-          tabs={tabList.map((t) => t.name)}
-          activeTab={activeTab}
-          onTabClick={handleTabClick}
-        />
-      </div>
-      <div className="mt-10">
+    <CapacityDetailLayout title="노인역량활동사업" tabList={tabList}>
+      <div className="mt-10 flex justify-center">
         <img
           src={Image}
           alt="찾아가는경로당행정도우미"
           className="w-[700px] rounded-lg shadow"
         />
       </div>
-    </div>
+    </CapacityDetailLayout>
   );
 }

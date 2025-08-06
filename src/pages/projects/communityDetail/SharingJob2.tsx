@@ -1,7 +1,5 @@
-import Title from "../../../components/Title";
+import CommunityDetailLayout from "../../../layouts/CommunityDetailLayout";
 import Image from "../../../assets/images/community/commonWork2.jpg";
-import { useLocation, useNavigate } from "react-router-dom";
-import ProjectTab from "../../../components/ProjectTab";
 import { ROUTE } from "../../../routes/route";
 
 const tabList = [
@@ -46,34 +44,17 @@ const tabList = [
 ];
 
 export default function SharingJob2() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleTabClick = (tabName: string) => {
-    const target = tabList.find((tab) => tab.name === tabName);
-    if (target) navigate(target.path);
-  };
-
-  const activeTab =
-    tabList.find((tab) => tab.path === location.pathname)?.name || "";
 
   return (
-    <div className="max-w-screen-md mx-auto px-4">
-      <Title text="공동작업장-2" />
-      <div className="mt-10">
-        <ProjectTab
-          tabs={tabList.map((t) => t.name)}
-          activeTab={activeTab}
-          onTabClick={handleTabClick}
-        />
-      </div>
-      <div className="mt-10">
+    <CommunityDetailLayout title="공동체사업단" tabList={tabList}>
+
+      <div className="mt-10 flex justify-center">
         <img
           src={Image}
           alt="공유냉장고사업 2"
           className="w-[700px] rounded-lg shadow"
         />
       </div>
-    </div>
+    </CommunityDetailLayout>
   );
 }

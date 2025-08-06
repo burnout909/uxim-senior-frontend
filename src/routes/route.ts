@@ -29,12 +29,12 @@ export const ROUTE = {
     },
 
     capacityDetail: {
-      seniorAdmin: "/projects/capacity-detail/senior-admin",
+      seniorAdmin: "/projects/capacity-detail/senior-guide",
       consumerMonitor: "/projects/capacity-detail/consumer-monitor",
       bookDelivery: "/projects/capacity-detail/book-delivery",
-      mobileAdmin: "/projects/capacity-detail/mobile-admin",
-      financeSupport: "/projects/capacity-detail/finance-support",
-      foodbankManager: "/projects/capacity-detail/foodbank-manager",
+      mobileAdmin: "/projects/capacity-detail/mobile-senior-admin",
+      financeSupport: "/projects/capacity-detail/financial-support",
+      foodbankManager: "/projects/capacity-detail/food-bank-manager",
       trafficSurveyor: "/projects/capacity-detail/traffic-surveyor",
     },
 
